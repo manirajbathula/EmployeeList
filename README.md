@@ -23,5 +23,7 @@ Display Employee Information including Search Filter using ASP.NET MVC Core
 
 If you have any suggestions/corrections, you can always email me at: maniraj.bathula@gmail.com.
 
+Project Link: https://github.com/manirajbathula/EmployeeList.git
+
 Thank you
 Maniraj
