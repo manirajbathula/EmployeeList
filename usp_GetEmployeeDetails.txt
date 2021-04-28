@@ -1,0 +1,27 @@
+USE [dbTest]
+GO
+/****** Object:  StoredProcedure [dbo].[usp_GetEmployeeDetails]    Script Date: 4/28/2021 1:26:51 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[usp_GetEmployeeDetails]
+as
+Begin
+SET NOCOUNT ON;
+select emp.EmployeeID as EmployeeId, 
+emp.FirstName + ' ' + emp.LastName as EmployeeFullName,
+emp.Bio as EmployeeBio,
+emp.ProfileImage as EmployeeProfileImage,
+emp.FBProfileLink as EmployeeFBProfileLink,
+emp.TwitterProfileLink as EmployeeTwitterProfileLink,
+dep.DepartmentName as EmployeeDepartmentName,
+subDept.SubDepartmentName as EmployeeSubDepartmentName
+from Employee emp join SubDepartment subDept 
+on emp.SubDepartmentID = subDept.SubDepartmentID
+join Department dep 
+on dep.DepartmentID = subDept.DepartmentID
+where emp.Deleted=0 and dep.Deleted =0 and subDept.Deleted=0
+order by dep.DepartmentName 
+END
