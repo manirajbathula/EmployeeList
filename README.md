@@ -10,7 +10,7 @@ Display Employee Information including Search Filter using ASP.NET MVC Core
   
 2. Pre-requisites:
   1. Install the above Nuget Packages in your project
-  2. Run the db Script files to generate the required 3 tables and 1 Stored Procedure.
+  2. Run the db Script files in SQL Server Management Studio to generate the required 3 tables(tables_scripts.txt) and 1 Stored Procedure.(usp_GetEmployeeDetails.txt)
   3. make sure you have the sample image files in project wwwroot/images folder.
 
 3. Usage:
